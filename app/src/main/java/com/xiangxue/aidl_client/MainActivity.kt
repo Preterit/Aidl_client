@@ -19,13 +19,11 @@ class MainActivity : AppCompatActivity() {
         var tv_click = findViewById<TextView>(R.id.tv_click);
 
         tv_click.setOnClickListener { v ->
-            run {
-                try {
-                    var person: Person = Person("张三", 19)
-                    iLeoAidl?.addPerson(person)
-                } catch (e: RemoteException) {
-                    e.printStackTrace()
-                }
+            try {
+                var person: Person = Person("张三", 19)
+                iLeoAidl?.addPerson(person)
+            } catch (e: RemoteException) {
+                e.printStackTrace()
             }
         }
     }
